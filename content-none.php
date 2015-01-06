@@ -10,7 +10,7 @@
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php _e( 'Nothing Found', 'bootblog' ); ?></h1>
+		<h2 class="page-title"><?php _e( 'Nothing Found', 'bootblog' ); ?></h2>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
