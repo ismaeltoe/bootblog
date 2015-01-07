@@ -94,15 +94,13 @@ add_action( 'widgets_init', 'bootblog_widgets_init' );
  * Enqueue scripts and styles.
  */
 function bootblog_scripts() {
-	wp_enqueue_style( 'bootblog-bootstrap-style', get_template_directory_uri() . '/css/bootstrap.min.css' );
+	wp_enqueue_style( 'bootblog-bootstrap-style', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.1' );
 
 	wp_enqueue_style( 'bootblog-style', get_stylesheet_uri() );
+	
+	wp_enqueue_script( 'bootblog-bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '3.3.1', true );
 
-	wp_enqueue_script( 'bootblog-jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), '', true );
-
-	wp_enqueue_script( 'bootblog-bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '', true );
-
-	wp_enqueue_script( 'bootblog-ie10-viewport-bug-workaround', get_template_directory_uri() . '/js/ie10-viewport-bug-workaround.js', array(), '', true );
+	wp_enqueue_script( 'bootblog-ie10-viewport-bug-workaround', get_template_directory_uri() . '/js/ie10-viewport-bug-workaround.js', array( 'jquery' ), '20150107', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
